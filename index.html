@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PhotoBooth</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📸 My PhotoBooth</h1>
+        </header>
+
+        <main>
+            <!-- Mode Selection -->
+            <section class="mode-selection">
+                <button class="mode-btn active" data-mode="take">📷 Take Photo</button>
+                <button class="mode-btn" data-mode="upload">📁 Upload Photo</button>
+            </section>
+
+            <!-- Webcam Mode -->
+            <section id="take-mode" class="mode-content active">
+                <div class="photobooth-container">
+                    <div class="canvas-wrapper">
+                        <canvas id="canvas"></canvas>
+                        <video id="video" playsinline></video>
+                        <div id="background-overlay" class="background-overlay"></div>
+                        <div id="stickers-container" class="stickers-container"></div>
+                    </div>
+                    <div class="controls">
+                        <button id="capture-btn" class="btn btn-primary">Capture Photo</button>
+                        <button id="retake-btn" class="btn btn-secondary" style="display:none;">Retake</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Upload Mode -->
+            <section id="upload-mode" class="mode-content">
+                <div class="upload-container">
+                    <label for="image-upload" class="upload-label">
+                        <div class="upload-area">
+                            <p>📤 Click to upload or drag and drop</p>
+                            <p class="upload-hint">PNG, JPG, GIF up to 10MB</p>
+                        </div>
+                    </label>
+                    <input type="file" id="image-upload" accept="image/*" hidden>
+                </div>
+            </section>
+
+            <!-- Customization Panel -->
+            <section class="customization-panel">
+                <div class="panel-section">
+                    <h3>🎨 Backgrounds</h3>
+                    <div id="backgrounds-container" class="customization-grid">
+                        <button class="bg-btn active" data-bg="none">None</button>
+                        <!-- Custom backgrounds go here -->
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h3>✨ Stickers</h3>
+                    <div id="stickers-palette" class="customization-grid">
+                        <!-- Custom stickers go here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preview Section -->
+            <section id="preview-section" class="preview-section" style="display:none;">
+                <div class="preview-container">
+                    <canvas id="preview-canvas"></canvas>
+                    <div class="preview-controls">
+                        <button id="download-btn" class="btn btn-primary">⬇️ Download</button>
+                        <button id="new-photo-btn" class="btn btn-secondary">➕ New Photo</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Add your custom backgrounds and stickers in the <code>assets/</code> folder</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

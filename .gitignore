@@ -1,0 +1,20 @@
+node_modules/
+.DS_Store
+.env
+.env.local
+*.log
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Keep the assets folders but ignore custom user files
+# (Uncomment the next lines if you want to exclude all custom images)
+# assets/backgrounds/*
+# assets/stickers/*
+# !assets/backgrounds/.gitkeep
+# !assets/stickers/.gitkeep
